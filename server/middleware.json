@@ -1,6 +1,12 @@
 {
   "initial:before": {
-    "loopback#favicon": {}
+    "loopback#favicon": {},
+    "loopback#context": {
+      "params": {
+        "enableHttpContext": true
+      }
+    },
+    "loopback#token": {}
   },
   "initial": {
     "compression": {},
