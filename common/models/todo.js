@@ -3,10 +3,18 @@ const loopback = require('loopback');
 
 module.exports = function(Todo) {
 
-  Todo.createTodo = function(name, cb) {
+  Todo.createTodo = function(cb) {
     let ctx = loopback.getCurrentContext();
+    let Tag = Todo.app.models.Tag;
 
+    console.log('ctx value outside promise:', ctx, '\n');
 
+    Tag.find()
+    .then(() => {
+      ctx = loopback.getCurrentContext();
+      console.log('ctx value inside promise:', ctx, '\n');
+      cb(null, 'ok')
+    })
   };
 
   Todo.remoteMethod('createTodo', {

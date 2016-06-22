@@ -2,5 +2,11 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mymysql": {
+    "name": "mymysql",
+    "connector": "mysql",
+    "database": "haven",
+    "username": "root"
   }
 }
